@@ -1,0 +1,96 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+body{
+  background-color:#8ed0e8;
+}
+
+
+h2 {
+  font-weight:bold;
+  color: #000000;
+  background-color: #b0d7f5;
+  padding: 10px;
+  text-align: center;
+  font-family: Helvetica;
+}
+
+p {
+  font-weight:bold;
+  color: #000000;
+  text-align: center;
+  font-family: Helvetica;
+}
+
+
+
+
+img {
+  width: 600px;
+  border: 2px solid black;
+}
+
+
+```
+
+## Survey on Student Clothing Patterns in UoA
+Karlo Baltazar, jbal454
+
+Bar Chart 1: Tops
+
+```{r}
+library(tidyverse)
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRbvCuZWnD4MTl8Ez1knPk8KjhHpvc36ye0L6-Vcgbh-ZRbHvOa04Sz0lxTOt40xHSg1Oxs4ZCTDwrE/pub?output=csv")
+
+
+latest_data <- logged_data %>%
+  rename(
+    Type_of_top = 2, 
+    Footwear = 3, 
+    Dominant_Colour = 4, 
+    Accessories = 5, 
+    Wearing_Headwear = 6
+  )
+
+## 
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(x = Type_of_top, fill = Type_of_top)) +
+  labs(title = "What tops are popular?",
+       subtitle = "Comparing the amount of tops seen by students on campus",
+       caption = "Source: Google Forms",
+       x = "Types of Tops",
+       y = "Number of Tops"
+       )
+
+```
+
+Bar Chart 2: Shoes
+
+```{r}
+#Bar Chart 2: Shoes
+latest_data %>%
+  ggplot() +
+  geom_bar(aes(y = Footwear), fill = "#0390fc") +
+  labs(title = "What shoes are popular?",
+       subtitle = "Comparing the amount of shoes seen by students on campus",
+       caption = "Source: Google Forms",
+       x = "Number of Shoes",
+       y = "Types of Shoes"
+  )
+
+```
+
+
+The length of accessories is `r length(latest_data$Accessories)`.
+
+The mean of accessories is `r mean(latest_data$Accessories)`.
+
