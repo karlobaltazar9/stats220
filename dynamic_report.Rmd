@@ -39,6 +39,7 @@ img {
 }
 
 
+
 ```
 
 ## Survey on Student Clothing Patterns in UoA
@@ -94,3 +95,15 @@ The length of accessories is `r length(latest_data$Accessories)`.
 
 The mean of accessories is `r mean(latest_data$Accessories)`.
 
+
+```{r}
+library(magick)
+
+gif <- image_read("https://media.tenor.com/UmT_i4VG0q4AAAAM/bundle-up-cold.gif")
+gif
+
+
+```
+
+You can access my other repositories through my GitHub!
+[Github](https://github.com/karlobaltazar9)
