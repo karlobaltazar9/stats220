@@ -31,11 +31,14 @@ p {
 }
 
 
-
-
 img {
   width: 600px;
   border: 2px solid black;
+}
+
+.normal-text {
+  font-weight: normal;
+  font-size: 14px; /* adjust size here */
 }
 
 
@@ -66,13 +69,19 @@ latest_data %>%
   ggplot() +
   geom_bar(aes(x = Type_of_top, fill = Type_of_top)) +
   labs(title = "What tops are popular?",
-       subtitle = "Comparing the amount of tops seen by students on campus",
+       subtitle = "Comparing the amount of tops seen by students on UOA's campus",
        caption = "Source: Google Forms",
        x = "Types of Tops",
        y = "Number of Tops"
        )
 
 ```
+
+
+<p class="normal-text">
+Hoodies are the most popular option, followed by T-shirts, sweaters, and jackets. This pattern suggests that students prioritise comfort and practicality, especially in Auckland’s unpredictable weather, where versatile clothing like hoodies is well-suited to changing conditions.
+</p>
+
 
 Bar Chart 2: Shoes
 
@@ -82,13 +91,17 @@ latest_data %>%
   ggplot() +
   geom_bar(aes(y = Footwear), fill = "#0390fc") +
   labs(title = "What shoes are popular?",
-       subtitle = "Comparing the amount of shoes seen by students on campus",
+       subtitle = "Comparing the amount of shoes seen by students on UOA's campus",
        caption = "Source: Google Forms",
        x = "Number of Shoes",
        y = "Types of Shoes"
   )
 
 ```
+
+<p class="normal-text">
+Sneakers are the most popular type of footwear on Auckland's campus, followed by boots and formal shoes. This suggests that many students tend to prioritise comfort in their daily footwear choices, with sneakers being the most suitable for walking around campus. This is unlike boots or formal shoes, where walking for long periods of time may feel uncomfortable for students.
+</p>
 
 
 The length of accessories is `r length(latest_data$Accessories)`.
