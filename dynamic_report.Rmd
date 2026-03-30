@@ -23,12 +23,21 @@ h2 {
   font-family: Helvetica;
 }
 
-p {
+h3 {
   font-weight:bold;
   color: #000000;
   text-align: center;
   font-family: Helvetica;
 }
+
+
+p {
+  color: #000000;
+  text-align: center;
+  font-family: Helvetica;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 
 
 img {
@@ -37,8 +46,10 @@ img {
 }
 
 .normal-text {
-  font-weight: normal;
-  font-size: 14px; /* adjust size here */
+  font-weight: normal;  /* removes bold */
+  font-size: 14px;      /* optional: adjust size */
+  text-align: center;
+  font-family: Helvetica;
 }
 
 
@@ -46,9 +57,11 @@ img {
 ```
 
 ## Survey on Student Clothing Patterns in UoA
-Karlo Baltazar, jbal454
 
-Bar Chart 1: Tops
+### Karlo Baltazar, jbal454
+
+
+### Bar Chart 1: Tops
 
 ```{r}
 library(tidyverse)
@@ -77,9 +90,10 @@ latest_data %>%
 
 ```
 
+Hoodies are the most popular option, followed by T-shirts, sweaters, and jackets. This pattern suggests that students prioritise comfort and practicality, especially in Auckland’s unpredictable weather, where versatile clothing like hoodies is well-suited to changing conditions.
 
 
-Bar Chart 2: Shoes
+### Bar Chart 2: Shoes
 
 ```{r}
 #Bar Chart 2: Shoes
@@ -95,10 +109,13 @@ latest_data %>%
 
 ```
 
+Sneakers are the most popular type of footwear, followed by boots and formal shoes. This pattern indicates that students prioritise comfort and convenience, as sneakers are well-suited for walking around campus. The presence of boots may reflect changing weather conditions, while formal shoes are less common due to their lower practicality for everyday university activities.
 
-The length of accessories is `r length(latest_data$Accessories)`.
 
-The mean of accessories is `r mean(latest_data$Accessories)`.
+
+### The length of accessories is `r length(latest_data$Accessories)`.
+
+### The mean of accessories is `r mean(latest_data$Accessories)`.
 
 
 ```{r}
@@ -112,3 +129,5 @@ gif
 
 You can access my other repositories through my GitHub!
 [Github](https://github.com/karlobaltazar9)
+
+
